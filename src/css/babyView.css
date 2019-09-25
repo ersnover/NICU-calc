@@ -1,0 +1,156 @@
+.smallNavbar {
+    width: 100vw;
+    height: 10vh;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    background-color: #70a1ff;
+    border-bottom: 1px solid white;
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navlink {
+    color: #3B3B98;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navlink.active {
+    color: white;
+}
+
+.smallNavbarItem {
+    height: 85%;
+    border-right: 1px solid white;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.smallNavbarItem span {
+    font-size: 3.2vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+.smallNavbarItem:last-child {
+    border: none;
+}
+
+.smallNavbarItem i {
+    font-size: 20px;
+}
+
+.pageComponent {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dataContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dataSet {
+    width: 100%;
+    margin-bottom: 1vh;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dataLabel {
+    font-weight: 700;
+}
+
+.dataPoint {
+    align-self: flex-end;
+}
+
+.flagSpan {
+    margin-bottom: 1vh;
+    color: #B33771;
+}
+
+.toggleButton {
+    align-self: center;
+    font-size: 1.1rem;
+    height: 5vh;
+    width: 30vw;
+    border: 2px solid #3B3B98;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.moreButtonsDiv {
+    margin-top: 5vh;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.actionButton {
+    text-align: center;
+    font-size: 1.1rem;
+    height: 6vh;
+    width: 30vw;
+    border: 2px solid #3B3B98;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.deleteButton {
+    color: white;
+    background-color: #F97F51;
+}
+
+.editButton {
+    color: white;
+    background-color: #1B9CFC;
+}
+
+.passwordDiv {
+    width: 70%;
+    margin-top: 3vh;
+    border: 3px solid #3B3B98;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.passwordDiv input {
+    font-size: 1.1rem;
+}
+
+.pwButtonsDiv {
+    width: 90%;
+    margin: 2vh 0 2vh 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.submitButton {
+    text-align: center;
+    font-size: 1.1rem;
+    height: 5vh;
+    width: 30vw;
+    border: 2px solid #3B3B98;
+    border-radius: 4px;
+    display: inline-block;
+}

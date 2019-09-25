@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {connect} from 'react-redux'
+import {Switch, Route} from 'react-router-dom'
+import * as actionCreators from "./store/actionCreators"
+import './css/mainpage.css'
+import {Navbar} from './components/navbar'
+import {Header} from './components/header'
+import {ModuleNavbar} from './components/moduleNavbar'
 
-function App() {
+
+
+const App = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {props.isAuth ? 
+        <Switch>
+          <Route path="/main/babyView" component={ModuleNavbar} />
+          <Route path="/" component={Header} />
+        </Switch> : null}
+      {props.children}
+      {props.isAuth ? <Navbar /> : null}
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    isAuth: state.isAuth,
+    username: state.username,
+    userId: state.userId
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(actionCreators.signOut())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

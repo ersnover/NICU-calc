@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {Redirect} from 'react-router-dom'
-import "../css/babyCard.css"
+import "../../css/babyCard.css"
 
 const BabyCard = (props) => {
 
@@ -13,6 +13,7 @@ const BabyCard = (props) => {
 
     const [redirect, setRedirect] = useState({
         activated: false,
+        pathname: "",
         payload: ""
     })
 
@@ -42,7 +43,7 @@ const BabyCard = (props) => {
     }
 
     const navToBaby = () => {
-        setRedirect({activated: true, payload: baby})
+        setRedirect({activated: true, pathname: '/main/babyView', payload: baby})
     }
 
     useEffect(() => {
@@ -51,8 +52,8 @@ const BabyCard = (props) => {
 
 
     return (
-        <button onClick={navToBaby}>
-            {redirect.activated ? <Redirect to={{pathname: '/main/babyView', state: redirect.payload}} /> : null}
+        <button className="babyCardWrapperButton" onClick={navToBaby}>
+            {redirect.activated ? <Redirect to={{pathname: redirect.pathname, state: redirect.payload}} /> : null}
             <div className="babyCard">
                 <div className="roomDiv">
                     <span className="roomNum">{props.baby.roomNum}</span>

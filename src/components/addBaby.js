@@ -53,6 +53,7 @@ const AddBaby = (props) => {
         axios.post(`${env.serverUrl}/b/baby`, postBaby)
         .then(res => {
             if (res.data.baby) {
+                // post new weight obj
                 setRedirect({
                     activated: true,
                     pathname: '/main/babyView',

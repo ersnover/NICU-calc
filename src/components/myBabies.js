@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import * as env from '../env'
 import { connect } from 'react-redux'
-import BabyCard from './babyCard'
+import BabyCard from './subcomponents/babyCard'
 
 const MyBabies = (props) => {
 
@@ -28,7 +28,8 @@ const MyBabies = (props) => {
 
     return (
         <div className="pageComponent myBabiesDiv">
-            {babies.map((baby, i) => <BabyCard key={i} baby={baby} />)}
+            {babies.map((baby) => <BabyCard key={baby.id} baby={baby} />)}
+            <span className="errorSpan">{message}</span>
         </div>
     )
 }

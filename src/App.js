@@ -3,9 +3,8 @@ import {connect} from 'react-redux'
 import {Switch, Route} from 'react-router-dom'
 import * as actionCreators from "./store/actionCreators"
 import './css/mainpage.css'
-import {Navbar} from './components/navbar'
-import {Header} from './components/header'
-import {ModuleNavbar} from './components/moduleNavbar'
+import {Navbar} from './components/subcomponents/navbar'
+import {Header} from './components/subcomponents/header'
 
 
 
@@ -14,7 +13,7 @@ const App = (props) => {
     <div>
       {props.isAuth ? 
         <Switch>
-          <Route path="/main/babyView" component={ModuleNavbar} />
+          <Route path="/main/babyView" component={null} />
           <Route path="/" component={Header} />
         </Switch> : null}
       {props.children}

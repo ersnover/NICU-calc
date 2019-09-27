@@ -74,7 +74,7 @@ const BabyView = (props) => {
     }, [])
 
     return (
-        <div className="pageComponent">
+        <div>
             <ModuleNavbar activeComponent={componentToRender} setComponentToRender={setComponentToRender} />
             {renderSwitch()}
         </div>

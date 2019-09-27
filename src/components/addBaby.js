@@ -53,12 +53,8 @@ const AddBaby = (props) => {
         axios.post(`${env.serverUrl}/b/baby`, postBaby)
         .then(res => {
             if (res.data.baby) {
+                postWeight(res.data.baby)
                 // post new weight obj
-                setRedirect({
-                    activated: true,
-                    pathname: '/main/babyView',
-                    payload: res.data.baby
-                })
             } else if (res.data.error) {
                 setError(res.data.error)
             } else {
@@ -67,13 +63,37 @@ const AddBaby = (props) => {
         })
     }
 
+    const postWeight = (baby) => {
+        axios.post(`${env.serverUrl}/b/weight`, {
+            babyId: baby.id,
+            date: baby.birthDate,
+            weight: baby.birthWeight,
+            deltaDay: null,
+            deltaBirthWeight: null,
+            avg7day: null
+        })
+        .then(res => {
+            if (res.data.weight) {
+                console.log(res.data.weight)
+                setRedirect({
+                    activated: true,
+                    pathname: '/main/babyView',
+                    payload: baby
+                })
+            } else if (res.data.error) {
+                setError(res.data.error)
+            }
+        })
+    }
+
     return (
         <div className="pageComponent addBabyDiv">
             {redirect.activated ? <Redirect to={{pathname: redirect.pathname, state: redirect.payload}} /> : null}
-            <h3>New Baby Info</h3>
+            <h1>New Baby Info</h1>
+            <div className="addBabyDiv">
             <div className="inputDiv">
                 <label htmlFor="roomNum">Room Number</label>
-                <input type="text" name="roomNum" onChange={handleChange} />
+                <input className="shortInput" type="number" name="roomNum" onChange={handleChange} />
             </div>
             <div className="inputDiv">
                 <label htmlFor="birthDate">Birth Date</label>
@@ -81,17 +101,18 @@ const AddBaby = (props) => {
             </div>
             <div className="inputDiv">
                 <label htmlFor="birthWeight">Birth Weight (kg)</label>
-                <input type="text" name="birthWeight" onChange={handleChange} />
+                <input className="shortInput" type="number" name="birthWeight" onChange={handleChange} />
             </div>
             <div className="inputDiv">
-                <label htmlFor="gestAge">Gestational Age (weeks, days)</label>
+                <label htmlFor="gestAge">Gestational Age<br/>(weeks, days)</label>
                 <div className="gestAge">
-                    <input type="text" name="weeks" placeholder="weeks" onChange={handleGestAgeChange} />
-                    <input type="text" name="days" placeholder="days" onChange={handleGestAgeChange} />
+                    <input className="shortInput" type="number" name="weeks" placeholder="weeks" onChange={handleGestAgeChange} />
+                    <input className="shortInput" type="number" name="days" placeholder="days" onChange={handleGestAgeChange} />
                 </div>
             </div>
+            </div>
 
-            <button className="submitButton" onClick={handleSubmit}>Submit</button>
+            <button className="addButton" onClick={handleSubmit}>Add Baby</button>
             <span className="errorSpan">{error}</span>
         </div>
     )

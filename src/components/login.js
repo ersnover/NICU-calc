@@ -45,17 +45,19 @@ const Login = (props) => {
     const renderLogin = () => {
         return (
             <div className="loginDiv">
-                <h3>Welcome Back!</h3>
-                <div className="inputDiv">
+                <h1 className="login">Welcome Back!</h1>
+                <div className="loginInputDiv">
                     <label htmlFor="username">Username</label>
                     <input type="text" name="username" onChange={(e) => handleLoginChange(e)} />
                 </div>
-                <div className="inputDiv">
+                <div className="loginInputDiv">
                     <label htmlFor="password">Password</label>
                     <input type="password" name="password" onChange={(e) => handleLoginChange(e)} />
                 </div>
-                <button className="submitButton" onClick={handleLoginSubmit}>Login</button>
-                <button className="toggleButton" onClick={toggleState}>Register new account</button>
+                <div className="loginButtonsDiv">
+                    <button className="submitButton login" onClick={handleLoginSubmit}>Log In</button>
+                    <button className="toggleButton login" onClick={toggleState}>Register new account</button>
+                </div>
                 <span className="errorSpan">{error}</span>
             </div>
         )
@@ -91,24 +93,26 @@ const Login = (props) => {
 
     const renderRegister = () => {
         return (
-            <div className="registerDiv">
-                <h3>Let's get you set up.</h3>
-                <div className="inputDiv">
+            <div className="loginDiv">
+                <h1 className="login">Let's get you set up.</h1>
+                <div className="loginInputDiv">
                     <label htmlFor="username">Make a username:</label>
                     <input type="text" name="username" onChange={(e) => handleRegisterChange(e)} />
                 </div>
-                <div className="inputDiv">
+                <div className="loginInputDiv">
                     <label htmlFor="password">Create a password:</label>
                     <input type="password" name="password" onChange={(e) => handleRegisterChange(e)} />
                 </div>
-                <div className="inputDiv">
+                <div className="loginInputDiv">
                     <label htmlFor="password2">Re-enter your password:</label>
                     <input type="password" name="password2" onChange={(e) => handleRegisterChange(e)} />
                     <span className="errorSpan">Password must be at least 7 characters</span>
                 </div>
-                <button className="submitButton" onClick={handleRegisterSubmit}>Register</button>
-                <button className="toggleButton" onClick={toggleState}>Log in existing account</button>
-                <span className="errorSpan">{error}</span>
+                <div className="loginButtonsDiv">
+                    <button className="submitButton login" onClick={handleRegisterSubmit}>Register</button>
+                    <button className="toggleButton login" onClick={toggleState}>Log in existing account</button>
+                    <span className="errorSpan">{error}</span>
+                </div>
             </div>
         )
     }

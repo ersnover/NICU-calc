@@ -164,7 +164,7 @@ const Overview = (props) => {
         <div className="pageComponent">
             {redirect.activated ? <Redirect exact to={{pathname: redirect.pathname, state: redirect.payload}} /> : null}
             <h2>Baby Details</h2>
-           <span className="smallHeading">Room {renderRoom()}</span>
+            <span className="smallHeading">Room {renderRoom()}</span>
             <div className="dataContainer">
             <div className="dataSet">
                 <span className="dataLabel">Birth Weight: </span>

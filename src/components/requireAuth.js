@@ -4,17 +4,17 @@ import {connect} from 'react-redux'
 export default function(ComposedComponent) {
     class Authenticate extends Component {
 
-        // componentWillMount() {
-        //     if (!this.props.isAuth) {
-        //         this.props.history.push('/')
-        //         }
-        // }
+        componentWillMount() {
+            if (!this.props.isAuth) {
+                this.props.history.push('/')
+                }
+        }
 
-        // componentDidUpdate() {
-        //     if (!this.props.isAuth) {
-        //     this.props.history.push('/')
-        //     }
-        // }
+        componentDidUpdate() {
+            if (!this.props.isAuth) {
+            this.props.history.push('/')
+            }
+        }
 
         render() {
             return (

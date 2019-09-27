@@ -10,12 +10,12 @@ import {Header} from './components/subcomponents/header'
 
 const App = (props) => {
   return (
-    <div>
+    <div className="appDiv">
       {props.isAuth ? 
         <Switch>
           <Route path="/main/babyView" component={null} />
           <Route path="/" component={Header} />
-        </Switch> : null}
+        </Switch> : <div className="fakeHeader"></div>}
       {props.children}
       {props.isAuth ? <Navbar /> : null}
     </div>

@@ -1,8 +1,8 @@
 
 const initialState = {
-    isAuth: true,
-    docId: 2,
-    username: "ccuster"
+    isAuth: false,
+    docId: "",
+    username: ""
 
 }
 

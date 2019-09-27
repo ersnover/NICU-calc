@@ -27,7 +27,7 @@
 
 .shortInput {
     width: 25vw;
-    height: 5vh;
+    height: 2.5rem;
 }
 
 .addButton {
@@ -36,5 +36,5 @@
     background-color: #F97F51;
     border-radius: 4px;
     outline: none;
-    height: 7vh;
+    height: 4rem;
 }

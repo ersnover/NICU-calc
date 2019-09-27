@@ -1,4 +1,4 @@
-.inputDiv {
+.addInputDiv {
     margin-bottom: 3vh;
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@
 
 .shortInput {
     width: 25vw;
-    height: 12vw;
+    height: 5vh;
 }
 
 .addButton {

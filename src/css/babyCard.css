@@ -9,6 +9,7 @@
 }
 
 .babyCard {
+    font-size: 1rem;
     margin-bottom: 2vh;
     width: 100%;
     display: flex;

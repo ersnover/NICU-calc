@@ -91,19 +91,19 @@ const AddBaby = (props) => {
             {redirect.activated ? <Redirect to={{pathname: redirect.pathname, state: redirect.payload}} /> : null}
             <h1>New Baby Info</h1>
             <div className="addBabyDiv">
-            <div className="inputDiv">
+            <div className="addInputDiv">
                 <label htmlFor="roomNum">Room Number</label>
                 <input className="shortInput" type="number" name="roomNum" onChange={handleChange} />
             </div>
-            <div className="inputDiv">
+            <div className="addInputDiv">
                 <label htmlFor="birthDate">Birth Date</label>
                 <input type="datetime-local" name="birthDate" value={newBaby.birthDate} onChange={handleChange} />
             </div>
-            <div className="inputDiv">
+            <div className="addInputDiv">
                 <label htmlFor="birthWeight">Birth Weight (kg)</label>
                 <input className="shortInput" type="number" name="birthWeight" onChange={handleChange} />
             </div>
-            <div className="inputDiv">
+            <div className="addInputDiv">
                 <label htmlFor="gestAge">Gestational Age<br/>(weeks, days)</label>
                 <div className="gestAge">
                     <input className="shortInput" type="number" name="weeks" placeholder="weeks" onChange={handleGestAgeChange} />

@@ -46,6 +46,7 @@ const Login = (props) => {
         return (
             <div className="loginDiv">
                 <h1 className="login">Welcome Back!</h1>
+                <h3>Guest Username: ccuster<br/>Guest Password: chicago1</h3>
                 <div className="loginInputDiv">
                     <label htmlFor="username">Username</label>
                     <input type="text" name="username" onChange={(e) => handleLoginChange(e)} />
